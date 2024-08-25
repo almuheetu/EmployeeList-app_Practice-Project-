@@ -9,7 +9,7 @@ import com.example.employeelistapp.databinding.EmployeeListBinding
 class EmployeeAdapter(
     val employeesList: ArrayList<Employee>,
 ) : RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
-    class ViewHolder(val binding: EmployeeListBinding) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(var binding: EmployeeListBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val binding = EmployeeListBinding.inflate(
@@ -20,8 +20,18 @@ class EmployeeAdapter(
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        viewHolder: ViewHolder,
+        position: Int
+    ) {
         val employee = employeesList[position]
+        viewHolder.binding.employeeName.text = employee.name
+        viewHolder.binding.inEmployeeAge.tvKey.text = employee.age
+        viewHolder.binding.inEmployeeEmail.tvValue.text = employee.email
+        
+       // viewHolder.binding.inEmployeeEmail.tvKey.text = employee.email
+       // viewHolder.binding.inEmployeeAddress.tvKey.text = employee.address
+
 
     }
 

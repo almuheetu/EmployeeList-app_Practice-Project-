@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">EmployeeList App</string>
     <string name="profile_image">profile_image</string>
+    <string name="employee_profile_image">employee profile image</string>
+    <string name="john_doe">Jhon Doe</string>
+    <string name="email">Email :</string>
 </resources>
