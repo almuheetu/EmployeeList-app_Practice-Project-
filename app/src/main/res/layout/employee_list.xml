@@ -16,7 +16,7 @@
         tools:ignore="ExtraText">
 
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <ImageView
             android:id="@+id/employee_profile_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -27,7 +27,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/employee_name" />
+            app:layout_constraintBottom_toTopOf="@id/employee_name"
+            android:background="@drawable/circular_image_background"/>
 
 
         <TextView
