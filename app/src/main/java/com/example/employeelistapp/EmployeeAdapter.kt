@@ -1,13 +1,13 @@
 package com.example.employeelistapp
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.employeelistapp.databinding.EmployeeFragmentBinding
 import com.example.employeelistapp.databinding.EmployeeListBinding
 
 class EmployeeAdapter(
-    val employeesList: ArrayList<Employee>,
+    private val employeesList: ArrayList<Employee>,
 ) : RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
     class ViewHolder(var binding: EmployeeListBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -20,6 +20,7 @@ class EmployeeAdapter(
         return ViewHolder(binding)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(
         viewHolder: ViewHolder,
         position: Int
@@ -27,7 +28,7 @@ class EmployeeAdapter(
         val employee = employeesList[position]
         viewHolder.binding.employeeName.text = employee.name
         viewHolder.binding.inEmployeeAge.emailText.text = "Age :"
-        viewHolder.binding.inEmployeeAge.emailValue.text = employee.age.toString()
+        viewHolder.binding.inEmployeeAge.emailValue.text = employee.age
         viewHolder.binding.inEmployeeEmail.emailText.text = "Email :"
         viewHolder.binding.inEmployeeEmail.emailValue.text = employee.email
         viewHolder.binding.inEmployeeAddress.emailText.text = "Address :"
