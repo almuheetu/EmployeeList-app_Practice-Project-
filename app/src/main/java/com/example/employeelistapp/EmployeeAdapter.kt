@@ -34,7 +34,7 @@ class EmployeeAdapter(
         viewHolder.binding.inEmployeeEmail.tvKey.text = "Email :"
         viewHolder.binding.inEmployeeEmail.tvValue.text = employee.email
 
-        viewHolder.binding.inEmployeeAddress.tvKey.text = "From :"
+        viewHolder.binding.inEmployeeAddress.tvKey.text = "Address :"
         viewHolder.binding.inEmployeeAddress.tvValue.text = employee.address
 
     }

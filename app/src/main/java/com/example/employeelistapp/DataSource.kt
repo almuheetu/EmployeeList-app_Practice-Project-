@@ -138,7 +138,7 @@ val employeeList = arrayListOf(
         name = "Betty Green",
         age = "29",
         image = "https://example.com/betty_green.jpg",
-        email = "bet@gmail.com",
+        email = "betin@gmail.com",
         address = "Dhaka"
     )
 )
