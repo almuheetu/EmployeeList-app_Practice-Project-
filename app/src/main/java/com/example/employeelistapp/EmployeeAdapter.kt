@@ -26,10 +26,16 @@ class EmployeeAdapter(
     ) {
         val employee = employeesList[position]
         viewHolder.binding.employeeName.text = employee.name
-        
-       // viewHolder.binding.inEmployeeEmail.tvKey.text = employee.email
-       // viewHolder.binding.inEmployeeAddress.tvKey.text = employee.address
 
+        viewHolder.binding.inEmployeeAge.tvKey.text = "Age :"
+        viewHolder.binding.inEmployeeAge.tvValue.text = employee.age.toString()
+
+
+        viewHolder.binding.inEmployeeEmail.tvKey.text = "Email :"
+        viewHolder.binding.inEmployeeEmail.tvValue.text = employee.email
+
+        viewHolder.binding.inEmployeeAddress.tvKey.text = "From :"
+        viewHolder.binding.inEmployeeAddress.tvValue.text = employee.address
 
     }
 
