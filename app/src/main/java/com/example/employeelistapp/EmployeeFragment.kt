@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.employeelistapp.databinding.EmployeeFragmentBinding
 
-class EmployeeFragment : Fragment() {
+class EmployeeFragment : Fragment(), EmployeeAdapter.ItemClickListener {
     private lateinit var binding: EmployeeFragmentBinding
     private lateinit var employeeAdapter: EmployeeAdapter
 
@@ -28,9 +28,22 @@ class EmployeeFragment : Fragment() {
 
         val recyclerView : RecyclerView = binding.employeeRecyclerView
         recyclerView.layoutManager= GridLayoutManager(requireContext(),2)
-        employeeAdapter = EmployeeAdapter(employeeList)
+        employeeAdapter = EmployeeAdapter(employeeList, this)
         recyclerView.adapter = employeeAdapter
 
 
     }
+
+    override fun onItemClick(position: Int) {
+        val employee = employeeList[position]
+        val bundle = Bundle()
+        bundle.putString("name", employee.name)
+        bundle.putString("age", employee.age)
+        bundle.putString("image", employee.image)
+        bundle.putString("email", employee.email)
+        bundle.putString("address", employee.address)
+
+    }
+
+
 }

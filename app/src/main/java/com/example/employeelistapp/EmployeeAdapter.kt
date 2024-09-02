@@ -8,6 +8,8 @@ import com.example.employeelistapp.databinding.EmployeeListBinding
 
 class EmployeeAdapter(
     private val employeesList: ArrayList<Employee>,
+    private val listener: ItemClickListener
+
 ) : RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
     class ViewHolder(var binding: EmployeeListBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -33,10 +35,19 @@ class EmployeeAdapter(
         viewHolder.binding.inEmployeeEmail.emailValue.text = employee.email
         viewHolder.binding.inEmployeeAddress.emailText.text = "Address :"
         viewHolder.binding.inEmployeeAddress.emailValue.text = employee.address
-    }
+
+
+        viewHolder.itemView.setOnKeyListener{
+            _,_,_ ->
+            listener.onItemClick(position)
+            true
+        }}
 
 
     override fun getItemCount(): Int {
         return employeesList.size
+    }
+    interface ItemClickListener {
+        fun onItemClick(position: Int)
     }
 }
